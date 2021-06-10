@@ -1,0 +1,98 @@
+﻿
+
+
+
+/* The Overlay (background) */
+
+.menu {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #4c8eac;
+    opacity:1;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+
+#navpos {
+    align-self:flex-start;
+}
+
+
+button {
+    background-color: rgba(51, 51, 232,0.3);
+    color: white;
+    border: 4px solid;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: all 0.2s;
+    align-self: flex-start;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+    button:hover {
+        background-color: rgba(155, 235, 228,0.4);
+        border-color: #48caff;
+        color: white;
+        box-shadow: 0 0.5em 0.5em -0.4em #48cae4;
+        transform: translateY(-0.25em);
+    }
+
+    button:active {
+        color:white;
+    }
+
+
+
+/* Position of the content in the overlay-menu */
+.overlay-content {
+    position: relative;
+    top: 25%; 
+    width: 100%; 
+    text-align: center; 
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links in the menu */
+.menu a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: black;
+    display: block; 
+    transition: 0.3s; 
+}
+
+ /* Hover effect in the overlay content*/
+ .menu a:hover, .menu a:focus {
+        color: #f1f1f1;
+        
+    }
+
+/* Position the close button (top right corner) */
+.menu .close {
+    position: absolute;
+    top: 0px;
+    right: 80px;
+    font-size: 60px;
+}
+
+/* Making menu responsive */
+@media screen and (max-height: 450px) {
+    .menu a {
+        font-size: 20px
+    }
+
+    .menu .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
